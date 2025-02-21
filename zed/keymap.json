@@ -132,9 +132,9 @@
   },
   // Toggle terminal
   {
-    "context": "Workspace",
+    "context": "Editor",
     "bindings": {
-      "ctrl-\\": "terminal_panel::ToggleFocus"
+      "ctrl-j": "workspace::ToggleBottomDock"
     }
   },
   {
@@ -142,8 +142,8 @@
     "bindings": {
       "ctrl-h": "workspace::ActivatePaneLeft",
       "ctrl-l": "workspace::ActivatePaneRight",
-      "ctrl-k": "workspace::ActivatePaneUp",
-      "ctrl-j": "workspace::ActivatePaneDown"
+      "ctrl-k": "workspace::ActivatePaneUp"
+      // "ctrl-j": "workspace::ActivatePaneDown"
     }
   },
   // File panel (netrw)
