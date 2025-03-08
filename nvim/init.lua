@@ -35,6 +35,3 @@ require "nvchad.autocmds"
 vim.schedule(function()
   require "mappings"
 end)
-
--- clipboard integration by moi
-vim.opt.clipboard = "unnamedplus"
