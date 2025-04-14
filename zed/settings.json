@@ -14,7 +14,7 @@
     "edit_prediction_provider": "zed"
   },
   "base_keymap": "VSCode",
-  "theme": "Catppuccin Mocha",
+  "theme": "Ayu Dark",
   "ui_font_size": 17,
   "buffer_font_size": 18.5,
   // Finder model width
