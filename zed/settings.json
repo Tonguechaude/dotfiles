@@ -8,7 +8,8 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "icon_theme": "Material Icon Theme",
+  "show_edit_predictions": true,
+  "icon_theme": "Puppet Icons",
   "features": {
     "edit_prediction_provider": "zed"
   },
@@ -49,7 +50,7 @@
     "left_padding": 0.15,
     "right_padding": 0.15
   },
-  // Inlay hints preconfigured by Zed: Go, Rust, Typescript and Svelte
+  // Inlay hints preconfigured by Zed: Go, Typescript and Svelte
   "inlay_hints": {
     "enabled": true
   },
@@ -58,6 +59,32 @@
     "tailwindcss-language-server": {
       "settings": {
         "classAttributes": ["class", "className", "ngClass", "styles"]
+      },
+      "rust-analyzer": {
+        "initialization_options": {
+          "inlayHints": {
+            "maxLength": null,
+            "lifetimeElisionHints": {
+              "enable": "skip_trivial",
+              "useParameterNames": true
+            },
+            "closureReturnTypeHints": {
+              "enable": "always"
+            }
+          }
+        }
+      },
+      "rubocop": {
+        "initialization_options": {
+          "safeAutocorrect": false
+        }
+      },
+      "ruby-lsp": {
+        "initialization_options": {
+          "enabledFeatures": {
+            "diagnostics": false
+          }
+        }
       }
     }
   },
@@ -76,6 +103,9 @@
       "format_on_save": { "language_server": { "name": "ruff" } },
       "formatter": { "language_server": { "name": "ruff" } },
       "language_servers": ["pyright", "ruff"]
+    },
+    "Ruby": {
+      "language_servers": ["ruby-lsp", "rubocop", "!solargraph"]
     }
   },
   // Use zed commit editor

@@ -6,7 +6,7 @@
       // put key-bindings here if you want them to work in normal & visual mode
       // Git
       "space g h d": "editor::ToggleSelectedDiffHunks",
-      "space g h r": "editor::RevertSelectedHunks",
+      "space g h r": "git::Restore",
 
       // Toggle inlay hints
       "space t i": "editor::ToggleInlayHints",
@@ -50,10 +50,10 @@
       "g T": "editor::GoToTypeDefinitionSplit",
       "g r": "editor::FindAllReferences",
       "] d": "editor::GoToDiagnostic",
-      "[ d": "editor::GoToPrevDiagnostic",
+      "[ d": "editor::GoToPreviousDiagnostic",
       // TODO: Go to next/prev error
       "] e": "editor::GoToDiagnostic",
-      "[ e": "editor::GoToPrevDiagnostic",
+      "[ e": "editor::GoToPreviousDiagnostic",
       // Symbol search
       "s s": "outline::Toggle",
       "s S": "project_symbols::Toggle",
@@ -63,13 +63,13 @@
       // +Git
       // Git prev/next hunk
       "] h": "editor::GoToHunk",
-      "[ h": "editor::GoToPrevHunk",
+      "[ h": "editor::GoToPreviousHunk",
 
       // TODO: git diff is not ready yet, refer https://github.com/zed-industries/zed/issues/8665#issuecomment-2194000497
 
       // + Buffers
       // Switch between buffers
-      "shift-h": "pane::ActivatePrevItem",
+      "shift-h": "pane::ActivatePreviousItem",
       "shift-l": "pane::ActivateNextItem",
       // Close active panel
       "shift-q": "pane::CloseActiveItem",
@@ -177,13 +177,6 @@
       "ctrl-w j": "workspace::ActivatePaneDown"
     }
   },
-  {
-    "context": "Workspace",
-    "bindings": {
-      // Map VSCode like keybindings
-      "cmd-b": "workspace::ToggleRightDock"
-    }
-  },
   // Run nearest task
   {
     "context": "EmptyPane || SharedScreen || vim_mode == normal",
@@ -199,16 +192,6 @@
       "S": ["vim::PushSneakBackward", {}]
     }
   },
-  // Subword motion is not working really nice with `ciw`, disable for now
-  // {
-  //   "context": "VimControl && !menu",
-  //   "bindings": {
-  //     "w": "vim::NextSubwordStart",
-  //     "b": "vim::PreviousSubwordStart",
-  //     "e": "vim::NextSubwordEnd",
-  //     "g e": "vim::PreviousSubwordEnd"
-  //   }
-  // }
 
   // NEOVIM Bindings
   {
@@ -217,12 +200,12 @@
       "ctrl-w z": "workspace::ToggleZoom",
       "ctrl-w t": "terminal_panel::ToggleFocus",
       "g ]": "editor::GoToDiagnostic",
-      "g [": "editor::GoToPrevDiagnostic",
+      "g [": "editor::GoToPreviousDiagnostic",
       "g r": "editor::FindAllReferences",
       "shift-k": "editor::Hover",
       "space l a": "editor::ToggleCodeActions",
       "space l r": "editor::Rename",
-      "space l f": "editor::Format",
+      "ctrl-shift i": "editor::Format",
       "space l l": "diagnostics::Deploy",
       "g c c": "editor::ToggleComments",
       "space o": "tab_switcher::Toggle",
@@ -254,59 +237,16 @@
   {
     "context": "Editor",
     "bindings": {
-      // "cmd-[": "editor::Outdent",
-      // "cmd-]": "editor::Indent",
-      // "cmd-alt-up": "editor::AddSelectionAbove",
-      // "cmd-ctrl-p": "editor::AddSelectionAbove",
-      // "cmd-alt-down": "editor::AddSelectionBelow",
-      // "cmd-ctrl-n": "editor::AddSelectionBelow",
-      // "cmd-d": [
-      //   "editor::SelectNext",
-      //   {
-      //     "replace_newest": false
-      //   }
-      // ],
-      // "ctrl-cmd-d": [
-      //   "editor::SelectPrevious",
-      //   {
-      //     "replace_newest": false
-      //   }
-      // ],
-      // "cmd-k cmd-d": [
-      //   "editor::SelectNext",
-      //   {
-      //     "replace_newest": true
-      //   }
-      // ],
-      // "cmd-k ctrl-cmd-d": [
-      //   "editor::SelectPrevious",
-      //   {
-      //     "replace_newest": true
-      //   }
-      // ],
-      // "cmd-/": [
-      //   "editor::ToggleComments",
-      //   {
-      //     "advance_downwards": false
-      //   }
-      // ],
       "alt-up": "editor::SelectLargerSyntaxNode",
       "alt-down": "editor::SelectSmallerSyntaxNode",
-      // "cmd-u": "editor::UndoSelection",
-      // "cmd-shift-u": "editor::RedoSelection",
       "f8": "editor::GoToDiagnostic",
-      "shift-f8": "editor::GoToPrevDiagnostic",
+      "shift-f8": "editor::GoToPreviousDiagnostic",
       "f2": "editor::Rename",
       "f12": "editor::GoToDefinition",
       "alt-f12": "editor::GoToDefinitionSplit",
-      // "cmd-f12": "editor::GoToTypeDefinition",
-      // "alt-cmd-f12": "editor::GoToTypeDefinitionSplit",
       "alt-shift-f12": "editor::FindAllReferences",
       "ctrl-m": "editor::MoveToEnclosingBracket",
-      // "alt-cmd-[": "editor::Fold",
-      // "alt-cmd-]": "editor::UnfoldLines",
       "ctrl-space": "editor::ShowCompletions"
-      // "cmd-.": "editor::ToggleCodeActions"
     }
   }
 ]
