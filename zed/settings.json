@@ -34,7 +34,7 @@
     "show": true
   },
   "scrollbar": {
-    "show": "never"
+    "show": "auto"
   },
   // Only show error on tab
   "tabs": {
@@ -56,38 +56,48 @@
   },
   // LSP
   "lsp": {
+    "yaml-language-server": {
+      "settings": {
+        "yaml": {
+          "format": {
+            "singleQuote": true
+          }
+        }
+      }
+    },
     "tailwindcss-language-server": {
       "settings": {
         "classAttributes": ["class", "className", "ngClass", "styles"]
-      },
-      "rust-analyzer": {
-        "initialization_options": {
-          "inlayHints": {
-            "maxLength": null,
-            "lifetimeElisionHints": {
-              "enable": "skip_trivial",
-              "useParameterNames": true
-            },
-            "closureReturnTypeHints": {
-              "enable": "always"
-            }
+      }
+    },
+    "rust-analyzer": {
+      "settings": {
+        "inlayHints": {
+          "maxLength": null,
+          "lifetimeElisionHints": {
+            "enable": "skip_trivial",
+            "useParameterNames": true
+          },
+          "closureReturnTypeHints": {
+            "enable": "always"
           }
         }
-      },
-      "rubocop": {
-        "initialization_options": {
-          "safeAutocorrect": false
-        }
-      },
-      "ruby-lsp": {
-        "initialization_options": {
-          "enabledFeatures": {
-            "diagnostics": false
-          }
+      }
+    },
+    "rubocop": {
+      "settings": {
+        "safeAutocorrect": false
+      }
+    },
+    "ruby-lsp": {
+      "settings": {
+        "enabledFeatures": {
+          "diagnostics": false
         }
       }
     }
   },
+
   "languages": {
     // Refer https://zed.dev/docs/languages/javascript and https://zed.dev/docs/languages/typescript for more info
     "TypeScript": {
@@ -106,8 +116,15 @@
     },
     "Ruby": {
       "language_servers": ["ruby-lsp", "rubocop", "!solargraph"]
+    },
+    "YAML": {
+      "formatter": "language_server"
+    },
+    "JSON": {
+      "formatter": "language_server"
     }
   },
+
   // Use zed commit editor
   "terminal": {
     "font_family": "FiraCode Nerd Font Mono",
