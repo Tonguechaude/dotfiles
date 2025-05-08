@@ -1,0 +1,201 @@
+// settings.json, generated at Wed Feb 12 2025 20:04:29 GMT+0800 (Singapore Standard Time)
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "agent": {
+    "model_parameters": [],
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-latest"
+    },
+    "version": "2"
+  },
+  "show_edit_predictions": true,
+  "icon_theme": "Puppet Icons",
+  "features": {
+    "edit_prediction_provider": "zed"
+  },
+  "base_keymap": "VSCode",
+  "theme": "Gruvbox Dark",
+  "ui_font_size": 17,
+  "buffer_font_size": 18.5,
+  // Finder model width
+  "file_finder": {
+    "modal_width": "medium"
+  },
+  // NOTE: Change the font family to your preference
+  "buffer_font_family": "FiraCode Nerd Font",
+  // Vim mode settings
+  "vim_mode": true,
+  "vim": {
+    "enable_vim_sneak": true
+  },
+  // use relative line numbers
+  "relative_line_numbers": false,
+  "tab_bar": {
+    "show": true
+  },
+  "scrollbar": {
+    "show": "auto"
+  },
+  // Only show error on tab
+  "tabs": {
+    "show_diagnostics": "errors"
+  },
+  // Indentation, rainbow indentation
+  "indent_guides": {
+    "enabled": true,
+    "coloring": "indent_aware"
+  },
+  // NOTE: Zen mode, refer https://github.com/zed-industries/zed/issues/4382 when it's resolved
+  "centered_layout": {
+    "left_padding": 0.15,
+    "right_padding": 0.15
+  },
+  // Inlay hints preconfigured by Zed: Go, Typescript and Svelte
+  "inlay_hints": {
+    "enabled": true
+  },
+  // LSP
+  "lsp": {
+    "yaml-language-server": {
+      "settings": {
+        "yaml": {
+          "format": {
+            "singleQuote": true
+          }
+        }
+      }
+    },
+    "tailwindcss-language-server": {
+      "settings": {
+        "classAttributes": ["class", "className", "ngClass", "styles"]
+      }
+    },
+    "rust-analyzer": {
+      "settings": {
+        "inlayHints": {
+          "maxLength": null,
+          "lifetimeElisionHints": {
+            "enable": "skip_trivial",
+            "useParameterNames": true
+          },
+          "closureReturnTypeHints": {
+            "enable": "always"
+          }
+        }
+      }
+    },
+    "rubocop": {
+      "settings": {
+        "safeAutocorrect": false
+      }
+    },
+    "ruby-lsp": {
+      "settings": {
+        "enabledFeatures": {
+          "diagnostics": false
+        }
+      }
+    },
+    "jdtls": {
+      "initialization_options": {}
+    }
+  },
+
+  "languages": {
+    // Refer https://zed.dev/docs/languages/javascript and https://zed.dev/docs/languages/typescript for more info
+    "Rust": {
+      "show_edit_predictions": false
+    },
+    "TypeScript": {
+      // Refer https://github.com/jellydn/ts-inlay-hints for how to setup for Neovim and VSCode
+      "inlay_hints": {
+        "enabled": true,
+        "show_parameter_hints": false,
+        "show_other_hints": true,
+        "show_type_hints": true
+      }
+    },
+    "Python": {
+      "format_on_save": { "language_server": { "name": "ruff" } },
+      "formatter": { "language_server": { "name": "ruff" } },
+      "language_servers": ["pyright", "ruff"]
+    },
+    "Ruby": {
+      "language_servers": ["ruby-lsp", "rubocop", "!solargraph"]
+    },
+    "YAML": {
+      "formatter": "language_server"
+    },
+    "JSON": {
+      "formatter": "language_server"
+    }
+  },
+
+  // Use zed commit editor
+  "terminal": {
+    "font_family": "FiraCode Nerd Font Mono",
+    "env": {
+      "EDITOR": "zed --wait"
+    }
+  },
+  // File syntax highlighting
+  "file_types": {
+    "Dockerfile": ["Dockerfile", "Dockerfile.*"],
+    "JSON": ["json", "jsonc", "*.code-snippets"]
+  },
+  // File scan exclusions, hide on the file explorer and search
+  "file_scan_exclusions": [
+    "**/.git",
+    "**/.svn",
+    "**/.hg",
+    "**/CVS",
+    "**/.DS_Store",
+    "**/Thumbs.db",
+    "**/.classpath",
+    "**/.settings",
+    // above is default from Zed
+    "**/out",
+    "**/.husky",
+    "**/.turbo",
+    "**/.vscode-test",
+    "**/.vscode",
+    "**/.next",
+    "**/.storybook",
+    "**/.tap",
+    "**/.nyc_output",
+    "**/report",
+    "**/node_modules"
+  ],
+  // Turn off telemetry
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  // Move all panel to the right
+  "project_panel": {
+    "button": true,
+    "dock": "left",
+    "git_status": true
+  },
+  "outline_panel": {
+    "dock": "right"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  // Move some unnecessary panels to the left
+  "notification_panel": {
+    "dock": "left"
+  },
+  "chat_panel": {
+    "dock": "left"
+  }
+}
