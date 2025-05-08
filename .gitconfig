@@ -1,0 +1,13 @@
+[core]
+	editor = nvim
+[safe]
+	directory = /opt/Exegol
+[user]
+	email = evan.challias@tonguechaude.fr 
+  name = tongue
+[alias]
+  co = checkout
+  lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
+[pull]
+  rebase = true
+
