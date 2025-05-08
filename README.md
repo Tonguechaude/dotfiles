@@ -77,7 +77,7 @@ coc-markdownlint : lint de Markdown, très utile pour rédactions pro/docs.
 
 #### (Optionnel) Améliorations UX
 
-    :CocInstall coc-diagnostic coc-fzf coc-tabnine
+    :CocInstall coc-diagnostic coc-fzf
 
 coc-diagnostic : diagnostics détaillés via une interface lisible.
 
