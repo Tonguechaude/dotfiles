@@ -42,6 +42,31 @@ bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
+# Ctrl + arrows
+bindkey "\e[1;5D" backward-word          # Ctrl + Left
+bindkey "\e[1;5C" forward-word           # Ctrl + Right
+bindkey "\e[1;5A" up-line-or-history     # Ctrl + Up
+bindkey "\e[1;5B" down-line-or-history   # Ctrl + Down
+
+# Alt + arrows
+bindkey "\e[1;3D" backward-word          # Alt + Left
+bindkey "\e[1;3C" forward-word           # Alt + Right
+
+# Suppr and Ctrl + Suppr
+bindkey "^[[3~" delete-char              # Suppr
+bindkey "^[[3;5~" kill-word              # Ctrl + Suppr
+
+# Ctrl + Backspace
+bindkey "^H" backward-kill-word
+
+# Home / End
+bindkey "^[[H" beginning-of-line
+bindkey "^[[F" end-of-line
+
+# Ctrl + Home / End
+bindkey "^[[1;5H" beginning-of-line
+bindkey "^[[1;5F" end-of-line
+
 # History configuration
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
