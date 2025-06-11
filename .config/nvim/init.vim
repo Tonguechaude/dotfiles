@@ -217,6 +217,8 @@ set shortmess+=c
 " Activate FZF
 set rtp+=~/.fzf
 
+autocmd BufWritePre *.js Neoformat
+
 " Markdown support
 " Treat *.md files as markdown syntax (default is modula2)
 let g:markdown_fenced_languages = ['html', 'javascript', 'bash=sh']

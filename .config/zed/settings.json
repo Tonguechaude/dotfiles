@@ -8,36 +8,28 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "agent": {
-    "model_parameters": [],
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-3-5-sonnet-latest"
-    },
-    "version": "2"
-  },
   "show_edit_predictions": true,
   "icon_theme": "Puppet Icons",
   "features": {
     "edit_prediction_provider": "zed"
   },
   "base_keymap": "VSCode",
-  "theme": "Gruvbox Dark",
-  "ui_font_size": 17,
-  "buffer_font_size": 18.5,
+  "theme": "Gruvbox Dark Hard",
+  "ui_font_size": 18,
+  "buffer_font_size": 25,
   // Finder model width
   "file_finder": {
     "modal_width": "medium"
   },
   // NOTE: Change the font family to your preference
-  "buffer_font_family": "FiraCode Nerd Font",
+  "buffer_font_family": "JetBrainsMono Nerd Font Regular",
   // Vim mode settings
   "vim_mode": true,
   "vim": {
     "enable_vim_sneak": true
   },
   // use relative line numbers
-  "relative_line_numbers": false,
+  "relative_line_numbers": true,
   "tab_bar": {
     "show": true
   },
