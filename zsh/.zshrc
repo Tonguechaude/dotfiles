@@ -39,6 +39,7 @@ zinit cdreplay -q
 
 # Keybindings
 bindkey -e
+bindkey '^Y' autosuggest-accept
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
 
@@ -88,10 +89,18 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
 alias ls='ls --color'
+alias vi="nvim"
+# alias vim="nvim"
+# alias ll="eza -l --icons"
+# alias cat="bat"
+alias reload="exec zsh"
 
 # Shell integrations
+source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
-eval "$(rbenv init -)"
+
+# !TODO if I work with ruby again for Puppet modules
+# eval "$(rbenv init -)"
 
 # install node js
 export NVM_DIR="$HOME/.nvm"

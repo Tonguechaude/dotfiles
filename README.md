@@ -14,6 +14,12 @@ Ensure you have the following installed on your system
 
     sudo apt install stow
 
+### Exemple with stow
+
+```bash
+stow btop dunst fastfetch fuzzel gitui hypr kitty nvim tmux waybar zed
+```
+
 ### Node
 
     # Download and install nvm:
