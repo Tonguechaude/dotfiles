@@ -94,6 +94,8 @@ alias vi="nvim"
 # alias ll="eza -l --icons"
 # alias cat="bat"
 alias reload="exec zsh"
+alias rgba="asusctl aura-power keyboard -a"
+alias rgbo="asusctl aura-power keyboard -s"
 
 # Shell integrations
 source <(fzf --zsh)
