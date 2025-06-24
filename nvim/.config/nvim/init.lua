@@ -1,23 +1,10 @@
---     ____  __
---    |    |/ _|____    ____ _______________
---    |      < \__  \ _/ __ \\___   /\_  __ \
---    |    |  \ / __ \\  ___/ /    /  |  | \/
---    |____|__ (____  /\___  >_____ \ |__|
---        \/    \/     \/      \/
---
---    Courtesy of kickstart.nvim !!!
+require("plugins/vim-plug")
 
--- [[ Setting options ]]
-require 'config.options'
-
--- [[ Basic and high powered keybinds ]]
-require 'config.keybinds'
-
--- [[ Auto commands ]]
-require 'config.autocmd'
-
--- [[ Bootstrap Lazy package manager and install plugins ]]
-require 'config.lazy'
-
--- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
+require("plugins/alpha")
+require("plugins/coc")
+require("plugins/enable_hardtime")
+require("plugins/leader")
+require("plugins/merge_tool")
+require("plugins/miscellaneous")
+require("plugins/neoformat")
+require("plugins/nerdtree")
