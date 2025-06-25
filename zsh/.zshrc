@@ -10,6 +10,13 @@ autoload -Uz compinit && compinit
 
 export PATH="$HOME/.cargo/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.nvm/versions/node/v22.14.0/bin:$HOME/.local/share/zinit/polaris/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppet-editor-services:/opt/puppetlabs/bin"
 
+# Langue d'affichage : français
+export LANG=fr_FR.UTF-8
+
+# Forcer un encodage sûr pour Beaker/Puppet et autres outils
+export LC_ALL=C.UTF-8
+
+
 ZINIT_HOME="${XDG_DATA_HOME:-$HOME/.local/share}/zinit/zinit.git"
 
 if [[ ! -d "$ZINIT_HOME" ]]; then
@@ -102,7 +109,7 @@ source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
 
 # !TODO if I work with ruby again for Puppet modules
-# eval "$(rbenv init -)"
+eval "$(rbenv init -)"
 
 # install node js
 export NVM_DIR="$HOME/.nvm"
