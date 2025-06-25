@@ -1,0 +1,16 @@
+{
+  "coc.source.emoji.filetypes": [
+    "markdown",
+    "asciidoc",
+    "html"
+  ],
+  "coc.source.emoji.triggerCharacters": [
+    ";"
+  ],
+  "rust-analyzer.check.command": "clippy",
+  "workspace.ignoredFolders": [
+    "$HOME",
+    "$HOME/.cargo/**",
+    "$HOME/.rustup/**"
+  ]
+}

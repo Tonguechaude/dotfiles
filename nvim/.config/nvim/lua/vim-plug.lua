@@ -39,7 +39,7 @@ Plug('tpope/vim-surround')
 -- Best status bar ever
 Plug('vim-airline/vim-airline')
 
--- Conquer of Code (Completion and LSP support)
+-- Conquer of Completion and LSP support
 Plug('neoclide/coc.nvim', { ['branch'] = 'release' })
 
 -- Go
@@ -74,9 +74,6 @@ Plug('inkarkat/vim-ingo-library')
 -- Better swap file handling
 Plug('gioele/vim-autoswap')
 
--- Hashicorp Terraform syntax support
--- Plug('hashivim/vim-terraform')
-
 -- Async library for Vim (not required on Vim8 but required on Neovim ?)
 Plug('Shougo/vimproc.vim')
 
@@ -96,8 +93,6 @@ Plug('rhysd/vim-grammarous')
 vim.g['grammarous#jar_url'] = 'https://www.languagetool.org/download/LanguageTool-5.9.zip'
 vim.g['grammarous#use_vim_spelllang'] = 1
 
--- Plug('catppuccin/nvim', { ['as'] = 'catppuccin' })
-
 Plug('sphamba/smear-cursor.nvim')
 
 Plug('ellisonleao/gruvbox.nvim')
@@ -106,7 +101,14 @@ Plug('MunifTanjim/nui.nvim')
 Plug('m4xshen/hardtime.nvim')
 Plug('rcarriga/nvim-notify')
 
+Plug('lewis6991/impatient.nvim')
 Plug('goolord/alpha-nvim')
+
+-- Puppet
+Plug('rodjek/vim-puppet')
+
+-- Ruby
+Plug('vim-ruby/vim-ruby')
 
 vim.call('plug#end')
 
