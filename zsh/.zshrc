@@ -95,11 +95,23 @@ zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 
 # Aliases
-alias ls='ls --color'
 alias vi="nvim"
-# alias vim="nvim"
-# alias ll="eza -l --icons"
-# alias cat="bat"
+alias vim="nvim"
+
+alias ls='eza --icons --color=always'
+alias ll='eza --icons --color=always -l'
+alias la='eza --icons --color=always -a'
+alias lla='eza --icons --color=always -la'
+alias lt='eza --icons --color=always -a --tree --level=1'
+
+alias grep='grep --color=always'
+
+alias cbonsai='cbonsai -l -i -w 1'
+
+## Setup bat (better than cat)
+export BAT_THEME="base16"
+alias bat='bat --paging=never'
+
 alias reload="exec zsh"
 alias rgba="asusctl aura-power keyboard -a"
 alias rgbo="asusctl aura-power keyboard -s"
@@ -109,9 +121,11 @@ source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
 
 # !TODO if I work with ruby again for Puppet modules
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 # install node js
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# pokemon-colorscripts --no-title -s -r
