@@ -8,8 +8,8 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "show_edit_predictions": true,
-  "icon_theme": "Puppet Icons",
+  "show_edit_predictions": false,
+  "icon_theme": "Zed (Default)",
   "features": {
     "edit_prediction_provider": "zed"
   },
@@ -56,11 +56,24 @@
   },
   // LSP
   "lsp": {
+    "puppet-languageserver": {
+      "binary": {
+        "path": "puppet-languageserver",
+        "arguments": ["--stdio", "--debug=/tmp/puppet-lsp-debug.log"]
+      },
+      "settings": {
+        "puppet": {
+          "modulePath": "./spec/fixtures/modules",
+          "environment": "development"
+        }
+      }
+    },
     "yaml-language-server": {
       "settings": {
         "yaml": {
           "format": {
-            "singleQuote": true
+            "enable": false
+            // "singleQuote": true
           }
         }
       }
@@ -86,6 +99,7 @@
     },
     "rubocop": {
       "settings": {
+        "use_bundler": false,
         "safeAutocorrect": false
       }
     },
@@ -102,10 +116,13 @@
   },
 
   "languages": {
-    // Refer https://zed.dev/docs/languages/javascript and https://zed.dev/docs/languages/typescript for more info
+    "Puppet": {
+      "show_edit_predictions": false
+    },
     "Rust": {
       "show_edit_predictions": false
     },
+    // Refer https://zed.dev/docs/languages/javascript and https://zed.dev/docs/languages/typescript for more info
     "TypeScript": {
       // Refer https://github.com/jellydn/ts-inlay-hints for how to setup for Neovim and VSCode
       "inlay_hints": {
@@ -128,11 +145,15 @@
     },
     "JSON": {
       "formatter": "language_server"
+    },
+    "PHP": {
+      "format_on_save": "off"
     }
   },
 
   // Use zed commit editor
   "terminal": {
+    "dock": "bottom",
     "font_family": "FiraCode Nerd Font Mono",
     "env": {
       "EDITOR": "zed --wait"
