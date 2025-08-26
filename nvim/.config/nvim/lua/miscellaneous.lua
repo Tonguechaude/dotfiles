@@ -91,7 +91,7 @@ vim.opt.hlsearch = true
 vim.opt.wrap = true
 vim.opt.textwidth = 0
 vim.opt.formatoptions = "qrn1"
-vim.opt.colorcolumn = "85"
+-- vim.opt.colorcolumn = "85"
 
 -- Colorscheme
 vim.opt.background = "dark" -- or light if you want light mode

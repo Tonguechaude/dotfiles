@@ -17,17 +17,11 @@
   "theme": "Gruvbox Dark Hard",
   "ui_font_size": 18,
   "buffer_font_size": 25,
-  // Finder model width
-  "file_finder": {
-    "modal_width": "medium"
-  },
+
   // NOTE: Change the font family to your preference
-  "buffer_font_family": "JetBrainsMono Nerd Font Regular",
+  "buffer_font_family": "JetBrainsMono Nerd Font Mono",
   // Vim mode settings
   "vim_mode": true,
-  "vim": {
-    "enable_vim_sneak": true
-  },
   // use relative line numbers
   "relative_line_numbers": true,
   "tab_bar": {
@@ -56,6 +50,10 @@
   },
   // LSP
   "lsp": {
+    // gem needed
+    // gem install yard -v 0.9.34
+    // gem install puppet-strings -v 4.1.2
+    // gem install puppet-editor-services -v 2.0.4
     "puppet-languageserver": {
       "binary": {
         "path": "puppet-languageserver",
@@ -63,7 +61,7 @@
       },
       "settings": {
         "puppet": {
-          "modulePath": "./spec/fixtures/modules",
+          "modulePath": "./modules:./site-modules:./spec/fixtures/modules",
           "environment": "development"
         }
       }
@@ -154,7 +152,7 @@
   // Use zed commit editor
   "terminal": {
     "dock": "bottom",
-    "font_family": "FiraCode Nerd Font Mono",
+    "font_family": "JetBrainsMono Nerd Font Mono",
     "env": {
       "EDITOR": "zed --wait"
     }

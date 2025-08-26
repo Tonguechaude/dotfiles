@@ -108,6 +108,8 @@ alias grep='grep --color=always'
 
 alias cbonsai='cbonsai -l -i -w 1'
 
+alias plane='cd ~/Documents/Dev/Plane/plane-selfhost; ./setup.sh'
+
 ## Setup bat (better than cat)
 export BAT_THEME="base16"
 alias bat='bat --paging=never'
@@ -120,8 +122,8 @@ alias rgbo="asusctl aura-power keyboard -s"
 source <(fzf --zsh)
 eval "$(zoxide init --cmd cd zsh)"
 
-# !TODO if I work with ruby again for Puppet modules
-# eval "$(rbenv init -)"
+# if I work with ruby for Puppet modules
+eval "$(rbenv init -)"
 
 # install node js
 export NVM_DIR="$HOME/.nvm"

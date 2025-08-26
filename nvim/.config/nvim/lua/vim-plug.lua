@@ -72,7 +72,7 @@ Plug('inkarkat/vim-SyntaxRange')
 Plug('inkarkat/vim-ingo-library')
 
 -- Better swap file handling
-Plug('gioele/vim-autoswap')
+-- Plug('gioele/vim-autoswap')
 
 -- Async library for Vim (not required on Vim8 but required on Neovim ?)
 Plug('Shougo/vimproc.vim')

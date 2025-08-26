@@ -1,37 +1,138 @@
 #!/bin/bash
 
-power_profile=$(asusctl profile -p)
-MONITOR_NAME=$(hyprctl -j monitors | jq -r '.[] | select(.focused) | .name')
-current_mode=$(hyprctl monitors | grep -A 2 "Monitor $MONITOR_NAME" | grep -oP '[0-9]+x[0-9]+@[0-9.]+')
-gpu_mode=$(supergfxctl -g)
+# Script de contrôle power/GPU amélioré
+# Gestion d'erreurs et notifications
 
-# La variable status doit être sur une seule ligne
-status="⚡ $power_profile | 󰍹 $gpu_mode"
+# Fonctions utilitaires
+notify_change() {
+    local title="$1"
+    local message="$2"
+    local icon="$3"
+    
+    if command -v notify-send &> /dev/null; then
+        notify-send -t 3000 -i "$icon" "$title" "$message"
+    fi
+    
+    # Log pour debug
+    echo "$(date): $title - $message" >> ~/.local/share/power-control.log
+}
 
-# Suppression des parenthèses dans le menu
-choice=$(echo -e \
-        "󰓅 Performance\n󰾫 Silent\n󰩐 Turbo\n | \nIntegré\n󰢢 Hybride\n󰘚 Dédié" | \
-        fuzzel --dmenu --lines 10 --placeholder="$status")
+get_current_status() {
+    local power_profile=""
+    local gpu_mode=""
+    
+    # Récupération sécurisée du profil power
+    if command -v asusctl &> /dev/null; then
+        power_profile=$(asusctl profile -p 2>/dev/null || echo "Unknown")
+    else
+        power_profile="N/A"
+    fi
+    
+    # Récupération sécurisée du mode GPU
+    if command -v supergfxctl &> /dev/null; then
+        gpu_mode=$(supergfxctl -g 2>/dev/null || echo "Unknown")
+    else
+        gpu_mode="N/A"
+    fi
+    
+    echo "⚡ $power_profile | 󰍹 $gpu_mode"
+}
 
+# Mode cycle pour raccourci clavier
+cycle_power_profile() {
+    local current=$(asusctl profile -p 2>/dev/null)
+    
+    case "$current" in
+        *"Silent"*)
+            sudo asusctl profile -P Performance
+            notify_change "Power Profile" "Switched to Performance" "applications-system"
+            ;;
+        *"Performance"*)
+            sudo asusctl profile -P Turbo
+            notify_change "Power Profile" "Switched to Turbo" "applications-system"
+            ;;
+        *)
+            sudo asusctl profile -P Silent
+            notify_change "Power Profile" "Switched to Silent" "applications-system"
+            ;;
+    esac
+}
 
-# Suppression des parenthèses dans les cas correspondants
-case "$choice" in
-    "󰓅 Performance")
-        sudo asusctl profile -P Performance
+# Mode cycle pour GPU
+cycle_gpu_mode() {
+    local current=$(supergfxctl -g 2>/dev/null)
+    
+    case "$current" in
+        *"Integrated"*)
+            sudo supergfxctl -m Hybrid
+            notify_change "GPU Mode" "Switched to Hybrid" "video-display"
+            ;;
+        *"Hybrid"*)
+            sudo supergfxctl -m AsusMuxDgpu
+            notify_change "GPU Mode" "Switched to Dedicated" "video-display"
+            ;;
+        *)
+            sudo supergfxctl -m Integrated
+            notify_change "GPU Mode" "Switched to Integrated" "video-display"
+            ;;
+    esac
+}
+
+# Menu principal
+show_menu() {
+    local status=$(get_current_status)
+    
+    local choice=$(echo -e \
+        "󰓅 Performance\n󰾫 Silent\n󰩐 Turbo\n | \n󰍹 Integré\n󰢢 Hybride\n󰘚 Dédié\n | \n🔄 Cycle Power\n🔄 Cycle GPU" | \
+        fuzzel --dmenu --lines 12 --placeholder="$status" --width 25)
+    
+    case "$choice" in
+        "󰓅 Performance")
+            sudo asusctl profile -P Performance && \
+            notify_change "Power Profile" "Changed to Performance" "applications-system"
+            ;;
+        "󰾫 Silent")
+            sudo asusctl profile -P Silent && \
+            notify_change "Power Profile" "Changed to Silent" "applications-system"
+            ;;
+        "󰩐 Turbo")
+            sudo asusctl profile -P Turbo && \
+            notify_change "Power Profile" "Changed to Turbo" "applications-system"
+            ;;
+        "󰍹 Integré")
+            sudo supergfxctl -m Integrated && \
+            notify_change "GPU Mode" "Changed to Integrated" "video-display"
+            ;;
+        "󰢢 Hybride")
+            sudo supergfxctl -m Hybrid && \
+            notify_change "GPU Mode" "Changed to Hybrid" "video-display"
+            ;;
+        "󰘚 Dédié")
+            sudo supergfxctl -m AsusMuxDgpu && \
+            notify_change "GPU Mode" "Changed to Dedicated" "video-display"
+            ;;
+        "🔄 Cycle Power")
+            cycle_power_profile
+            ;;
+        "🔄 Cycle GPU")
+            cycle_gpu_mode
+            ;;
+    esac
+}
+
+# Arguments de ligne de commande
+case "$1" in
+    "cycle-power")
+        cycle_power_profile
         ;;
-    "󰾫 Silent")
-        sudo asusctl profile -P Silent
+    "cycle-gpu")
+        cycle_gpu_mode
         ;;
-    "󰩐 Turbo")
-        sudo asusctl profile -P Turbo
+    "status")
+        get_current_status
         ;;
-    "Integré")
-        sudo supergfxctl -m Integrated
-        ;;
-    "󰢢 Hybride")
-        sudo supergfxctl -m Hybrid
-        ;;
-    "󰘚 Dédié")
-        sudo supergfxctl -m AsusMuxDgpu
+    *)
+        show_menu
         ;;
 esac
+
