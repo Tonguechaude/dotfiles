@@ -68,8 +68,9 @@ Plug('mattn/emmet-vim')
 -- the best cursor
 Plug('sphamba/smear-cursor.nvim')
 
--- Gruvbox theme
-Plug('ellisonleao/gruvbox.nvim')
+-- Theme
+-- Plug('ellisonleao/gruvbox.nvim')
+Plug('everviolet/nvim', { ['as'] = 'evergarden' })
 
 -- Notify for my vim routine
 Plug('MunifTanjim/nui.nvim')
@@ -92,8 +93,4 @@ Plug('ibhagwan/fzf-lua')
 vim.call('plug#end')
 
 require('smear_cursor').enabled = true
-
--- Color scheme loaded after plugins
--- Prepended with !silent to avoid showing errors when not installed
-vim.cmd('silent! colorscheme gruvbox')
 
