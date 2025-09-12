@@ -45,11 +45,6 @@ Plug('neoclide/coc.nvim', { ['branch'] = 'release' })
 -- Go
 -- Plug('fatih/vim-go')
 
--- Ack support
--- Beware ! git.fsck might not like this plugin. Use manual install if needed:
--- git clone --config transfer.fsckobjects=false https://github.com/mileszs/ack.vim.git ~/.vim/bundle/ack.vim
-Plug('mileszs/ack.vim')
-
 -- Better substitution: use S instead of s and never look back !
 Plug('tpope/vim-abolish')
 
@@ -67,40 +62,21 @@ Plug('othree/jsdoc-syntax.vim')
 Plug('aklt/plantuml-syntax')
 vim.g.plantuml_set_makeprg = 0
 
--- Vimdeck support (see https://github.com/tybenz/vimdeck)
-Plug('inkarkat/vim-SyntaxRange')
-Plug('inkarkat/vim-ingo-library')
-
--- Better swap file handling
--- Plug('gioele/vim-autoswap')
-
--- Async library for Vim (not required on Vim8 but required on Neovim ?)
-Plug('Shougo/vimproc.vim')
-
 -- Easy HTML writing
 Plug('mattn/emmet-vim')
 
--- Increment/Decrement in Visual Block mode
-Plug('vim-scripts/VisIncr')
-
--- Undotree visualizer
-Plug('vim-scripts/undotree.vim')
-
--- Best language tool checker
-Plug('rhysd/vim-grammarous')
--- LanguageTool v6.x does not support --api anymore, breaking most LT-based
--- plugins :(
-vim.g['grammarous#jar_url'] = 'https://www.languagetool.org/download/LanguageTool-5.9.zip'
-vim.g['grammarous#use_vim_spelllang'] = 1
-
+-- the best cursor
 Plug('sphamba/smear-cursor.nvim')
 
+-- Gruvbox theme
 Plug('ellisonleao/gruvbox.nvim')
 
+-- Notify for my vim routine
 Plug('MunifTanjim/nui.nvim')
 Plug('m4xshen/hardtime.nvim')
 Plug('rcarriga/nvim-notify')
 
+-- cool icon for my vim setup
 Plug('lewis6991/impatient.nvim')
 Plug('goolord/alpha-nvim')
 
