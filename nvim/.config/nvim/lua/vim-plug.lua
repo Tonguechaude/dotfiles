@@ -19,9 +19,9 @@ Plug('wellle/targets.vim')
 -- Vim Session handling
 Plug('tpope/vim-obsession')
 
--- NERDTree
-Plug('scrooloose/nerdtree')
-Plug('Xuyuanp/nerdtree-git-plugin')
+-- nvim-tree (modern file explorer)
+Plug('nvim-tree/nvim-tree.lua')
+Plug('nvim-tree/nvim-web-devicons')
 Plug('scrooloose/nerdcommenter')
 
 -- .editorconfig support
