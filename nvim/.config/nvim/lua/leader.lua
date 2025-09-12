@@ -13,7 +13,7 @@ vim.keymap.set('n', '<LEADER>w', ':w<CR>')
 -- Alternate between two buffers
 vim.keymap.set('n', '<LEADER>a', ':b#<CR>')
 -- The one, and only
-vim.keymap.set('n', '<LEADER>f', ':FZF<CR>')
+vim.keymap.set('n', '<LEADER>f', ':FzfLua files<CR>')
 
 -- Keep default register when pasting (send erased selection in black hole
 -- register)
