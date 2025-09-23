@@ -6,12 +6,16 @@ vim.notify = require("notify")
 -- Break bad habits, master Vim motions
 -- See plugins lua
 require("hardtime").setup({
-    -- I keep arrow keys because HJKL makes no sense with my layout
+    -- I keep arrow keys and HJKL because I'm addict
     disabled_keys = {
         ["<Up>"] = {},
         ["<Down>"] = {},
         ["<Left>"] = {},
         ["<Right>"] = {},
+        ["h"] = {},
+        ["j"] = {},
+        ["k"] = {},
+        ["l"] = {},
     },
 })
 vim.opt.termguicolors = true
