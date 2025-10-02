@@ -8,7 +8,7 @@ fi
 # Load auto-completions
 autoload -Uz compinit && compinit
 
-export PATH="$HOME/.cargo/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.nvm/versions/node/v22.14.0/bin:$HOME/.local/share/zinit/polaris/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppet-editor-services:/opt/puppetlabs/bin"
+export PATH="$HOME/.cargo/bin:$HOME/.rbenv/shims:$HOME/.rbenv/bin:$HOME/.nvm/versions/node/v22.14.0/bin:$HOME/.local/share/zinit/polaris/bin:$HOME/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/opt/puppet-editor-services:/opt/puppetlabs/bin:$HOME/.local/share/bob/nvim-bin"
 
 # Langue d'affichage : français
 export LANG=fr_FR.UTF-8
