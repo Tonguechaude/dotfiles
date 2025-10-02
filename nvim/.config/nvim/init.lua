@@ -1,11 +1,12 @@
-require("vim-plug")
+-- Plugins
+require("plugins.plugins")
 
-require("dashboard_alpha")
-require("coc")
-require("enable_hardtime")
 require("leader")
-require("merge_tool")
-require("miscellaneous")
 require("neoformat")
+require("merge_tool")
 require("tree_config")
+require("miscellaneous")
+require("dashboard_alpha")
+require("enable_hardtime")
+
 require("theme")
