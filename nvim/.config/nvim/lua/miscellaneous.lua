@@ -72,6 +72,7 @@ vim.opt.ruler = true
 vim.opt.backspace = { "indent", "eol", "start" }
 
 -- Display line number relative to the current one
+vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Undo info available across vim instances
@@ -110,8 +111,9 @@ vim.opt.backupcopy = "yes"
 -- Activate autoswap tmux feature so that opening an already open file will
 -- automatically switch to the already opened vim instance in the relevant
 -- tmux window/panel
-vim.g.titlestring = ""
-vim.g.autoswap_detect_tmux = 1
+-- vim.g.titlestring = ""
+-- vim.g.autoswap_detect_tmux = 1
+vim.opt.swapfile = false
 
 -- Automatically refresh buffer on external changes
 vim.opt.autoread = true

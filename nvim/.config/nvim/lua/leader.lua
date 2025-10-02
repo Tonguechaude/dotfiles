@@ -14,6 +14,8 @@ vim.keymap.set('n', '<LEADER>w', ':w<CR>')
 vim.keymap.set('n', '<LEADER>a', ':b#<CR>')
 -- The one, and only
 vim.keymap.set('n', '<LEADER>f', ':FzfLua files<CR>')
+-- Source file
+vim.keymap.set('n', '<LEADER>o', ':update<CR> :source<CR>')
 
 -- Keep default register when pasting (send erased selection in black hole
 -- register)
