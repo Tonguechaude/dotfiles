@@ -1,12 +1,7 @@
--- Plugins
-require("plugins.plugins")
+require("core.keymap")
+require("core.plugins")
+require("core.plugins_config.init")
+require("core.lsp.init")
+require("core.miscellaneous")
+require("core.merge_tool")
 
-require("leader")
-require("neoformat")
-require("merge_tool")
-require("tree_config")
-require("miscellaneous")
-require("dashboard_alpha")
-require("enable_hardtime")
-
-require("theme")

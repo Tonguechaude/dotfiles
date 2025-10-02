@@ -49,3 +49,4 @@ if vim.api.nvim_get_option_value('diff', { win = 0 }) == true then
     vim.keymap.set('n', '<LEADER>u', function() vim.cmd.CallMergeKeepBoth() end)
     vim.keymap.set('n', '<LEADER>i', function() vim.cmd.CallMergeKeepRight() end)
 end
+

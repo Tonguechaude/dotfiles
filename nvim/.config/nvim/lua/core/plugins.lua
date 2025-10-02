@@ -7,6 +7,7 @@ vim.pack.add({
 
   -- Git Integration
   {src = "https://github.com/tpope/vim-fugitive"},
+  {src = "https://github.com/lewis6991/gitsigns.nvim.git"},
 
   -- Fugitive Github plugin
   {src = "https://github.com/tpope/vim-rhubarb"},
@@ -37,12 +38,14 @@ vim.pack.add({
   -- Best status bar ever
   {src = "https://github.com/vim-airline/vim-airline"},
 
-  -- Conquer of Completion and LSP support
-  -- {src = "https://github.com/neoclide/coc.vim",
-    -- version = 'release'},
+  -- LSP Plugin
+  { src = 'https://github.com/neovim/nvim-lspconfig' },
 
   -- Go
-  -- {src = "https://github.com/fatih/vim-go"},
+  {src = "https://github.com/fatih/vim-go"},
+
+  -- JDTLS
+  {src = "https://github.com/mfussenegger/nvim-jdtls"},
 
   -- Better substitution: use S instead of s and never look back !
   {src = "https://github.com/tpope/vim-abolish"},
@@ -88,6 +91,11 @@ vim.pack.add({
 
   -- fzf <3 vim
   {src = "https://github.com/ibhagwan/fzf-lua"},
+
+  -- tree-sitter go crazy
+  {src = "https://github.com/nvim-treesitter/nvim-treesitter"},
+
+  {src = "https://github.com/nvim-treesitter/nvim-treesitter-context"}, 
 })
 
 -- Start quickly ninja cursor yoohoooo

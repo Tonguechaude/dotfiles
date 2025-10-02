@@ -1,0 +1,152 @@
+{
+  "plugins": {
+    "alpha-nvim": {
+      "rev": "2b3cbcd",
+      "src": "https://github.com/goolord/alpha-nvim"
+    },
+    "editorconfig-vim": {
+      "rev": "6a58b7c",
+      "src": "https://github.com/editorconfig/editorconfig-vim"
+    },
+    "emmet-vim": {
+      "rev": "e983971",
+      "src": "https://github.com/mattn/emmet-vim"
+    },
+    "evergarden": {
+      "rev": "951d0c4",
+      "src": "https://github.com/everviolet/nvim"
+    },
+    "fzf-lua": {
+      "rev": "6bb2a26",
+      "src": "https://github.com/ibhagwan/fzf-lua"
+    },
+    "gitsigns.nvim": {
+      "rev": "20ad441",
+      "src": "https://github.com/lewis6991/gitsigns.nvim.git"
+    },
+    "hardtime.nvim": {
+      "rev": "b4e4319",
+      "src": "https://github.com/m4xshen/hardtime.nvim"
+    },
+    "impatient.nvim": {
+      "rev": "47302af",
+      "src": "https://github.com/lewis6991/impatient.nvim"
+    },
+    "jsdoc-syntax.vim": {
+      "rev": "b9caf51",
+      "src": "https://github.com/othree/jsdoc-syntax.vim"
+    },
+    "neoformat": {
+      "rev": "2b11fb9",
+      "src": "https://github.com/sbdchd/neoformat"
+    },
+    "nerdcommenter": {
+      "rev": "02a3b64",
+      "src": "https://github.com/scrooloose/nerdcommenter"
+    },
+    "nui.nvim": {
+      "rev": "de74099",
+      "src": "https://github.com/MunifTanjim/nui.nvim"
+    },
+    "nvim-jdtls": {
+      "rev": "380ac14",
+      "src": "https://github.com/mfussenegger/nvim-jdtls"
+    },
+    "nvim-lspconfig": {
+      "rev": "2b52bc2",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-notify": {
+      "rev": "8701bec",
+      "src": "https://github.com/rcarriga/nvim-notify"
+    },
+    "nvim-tree.lua": {
+      "rev": "64e2192",
+      "src": "https://github.com/nvim-tree/nvim-tree.lua"
+    },
+    "nvim-treesitter": {
+      "rev": "42fc28ba",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
+    "nvim-treesitter-context": {
+      "rev": "ec308c7",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter-context"
+    },
+    "nvim-web-devicons": {
+      "rev": "8dcb311",
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
+    "plantuml-syntax": {
+      "rev": "9d4900a",
+      "src": "https://github.com/aklt/plantuml-syntax"
+    },
+    "smear-cursor.nvim": {
+      "rev": "abfa583",
+      "src": "https://github.com/sphamba/smear-cursor.nvim"
+    },
+    "targets.vim": {
+      "rev": "6325416",
+      "src": "https://github.com/wellle/targets.vim"
+    },
+    "typescript-vim": {
+      "rev": "4740441",
+      "src": "https://github.com/leafgarland/typescript-vim"
+    },
+    "vim-abolish": {
+      "rev": "dcbfe06",
+      "src": "https://github.com/tpope/vim-abolish"
+    },
+    "vim-airline": {
+      "rev": "1595731",
+      "src": "https://github.com/vim-airline/vim-airline"
+    },
+    "vim-easymotion": {
+      "rev": "b3cfab2",
+      "src": "https://github.com/easymotion/vim-easymotion"
+    },
+    "vim-expand-region": {
+      "rev": "9665135",
+      "src": "https://github.com/terryma/vim-expand-region"
+    },
+    "vim-fugitive": {
+      "rev": "61b51c0",
+      "src": "https://github.com/tpope/vim-fugitive"
+    },
+    "vim-go": {
+      "rev": "06ac993",
+      "src": "https://github.com/fatih/vim-go"
+    },
+    "vim-indent-guides": {
+      "rev": "a1e1390",
+      "src": "https://github.com/preservim/vim-indent-guides"
+    },
+    "vim-javascript": {
+      "rev": "b26c9ed",
+      "src": "https://github.com/pangloss/vim-javascript"
+    },
+    "vim-jsx-typescript": {
+      "rev": "22df470",
+      "src": "https://github.com/peitalin/vim-jsx-typescript"
+    },
+    "vim-obsession": {
+      "rev": "ed9dfc7",
+      "src": "https://github.com/tpope/vim-obsession"
+    },
+    "vim-puppet": {
+      "rev": "10bf0b2",
+      "src": "https://github.com/rodjek/vim-puppet"
+    },
+    "vim-rhubarb": {
+      "rev": "5496d7c",
+      "src": "https://github.com/tpope/vim-rhubarb"
+    },
+    "vim-ruby": {
+      "rev": "bf3a599",
+      "src": "https://github.com/vim-ruby/vim-ruby"
+    },
+    "vim-surround": {
+      "rev": "3d188ed",
+      "src": "https://github.com/tpope/vim-surround"
+    }
+  }
+}
