@@ -8,14 +8,23 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
+  "disable_ai": true,
   "show_edit_predictions": false,
-  "icon_theme": "Zed (Default)",
+  "icon_theme": {
+    "mode": "dark",
+    "light": "Puppet Icons",
+    "dark": "Puppet Icons"
+  },
   "features": {
     "edit_prediction_provider": "zed"
   },
   "base_keymap": "VSCode",
-  "theme": "Gruvbox Dark Hard",
-  "ui_font_size": 18,
+  "theme": {
+    "mode": "dark",
+    "light": "Gruvbox Dark",
+    "dark": "One Dark"
+  },
+  "ui_font_size": 25,
   "buffer_font_size": 25,
 
   // NOTE: Change the font family to your preference
