@@ -37,12 +37,14 @@ vim.pack.add({
   -- Best status bar ever
   {src = "https://github.com/vim-airline/vim-airline"},
 
-  -- Conquer of Completion and LSP support
-  -- {src = "https://github.com/neoclide/coc.vim",
-    -- version = 'release'},
+  -- LSP Plugin
+  { src = 'https://github.com/neovim/nvim-lspconfig' },
 
   -- Go
-  -- {src = "https://github.com/fatih/vim-go"},
+  {src = "https://github.com/fatih/vim-go"},
+
+  -- JDTLS
+  {src = "https://github.com/mfussenegger/nvim-jdtls"},
 
   -- Better substitution: use S instead of s and never look back !
   {src = "https://github.com/tpope/vim-abolish"},

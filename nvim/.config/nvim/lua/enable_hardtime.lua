@@ -1,8 +1,5 @@
 local vim = vim
 
--- Dependency for Hardtime: vim.notify needs to be setup
-vim.notify = require("notify")
-
 -- Break bad habits, master Vim motions
 -- See plugins lua
 require("hardtime").setup({

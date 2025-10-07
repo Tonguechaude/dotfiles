@@ -10,3 +10,5 @@ require("dashboard_alpha")
 require("enable_hardtime")
 
 require("theme")
+
+require("lsp.lsp")
