@@ -90,6 +90,11 @@ vim.pack.add({
 
   -- fzf <3 vim
   {src = "https://github.com/ibhagwan/fzf-lua"},
+
+  -- tree-sitter go crazy
+  {src = "https://github.com/nvim-treesitter/nvim-treesitter"},
+
+  {src = "https://github.com/nvim-treesitter/nvim-treesitter-context"}, 
 })
 
 -- Start quickly ninja cursor yoohoooo

@@ -1,6 +1,6 @@
-if vim.fn.executable('clangd') == 1 then
+if vim.fn.executable('clangd-20') == 1 then
   vim.lsp.config('clangd', {
-    cmd = { 'clangd' },
+    cmd = { 'clangd-20' },
     filetypes = { 'c', 'h', 'cpp', 'objc', 'objcpp', 'cuda', 'proto' },
     settings = {
       clangd = {

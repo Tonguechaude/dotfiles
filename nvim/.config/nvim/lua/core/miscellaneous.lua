@@ -60,13 +60,13 @@ vim.opt.wildignore:append({ "node_modules/*" })
 
 -- Misc
 vim.opt.encoding = "utf-8"
-vim.opt.scrolloff = 3
+vim.opt.scrolloff = 8
 vim.opt.autoindent = true
 vim.opt.showmode = true
 vim.opt.showcmd = true
 vim.opt.hidden = true
 vim.opt.visualbell = true
--- vim.opt.cursorline
+vim.opt.cursorline = true
 vim.opt.ttyfast = true
 vim.opt.ruler = true
 vim.opt.backspace = { "indent", "eol", "start" }
@@ -155,10 +155,10 @@ vim.opt.inccommand = "nosplit"
 -- vim-emmet configuration
 vim.g.user_emmet_leader_key = '<Tab>'
 
--- Explain Rust errors
+-- Explain Rust errors (using native LSP)
 vim.api.nvim_create_autocmd({ "FileType" }, {
     pattern = "rust",
-    callback = function() vim.keymap.set('n', '<LEADER>e', ":call CocCommand('rust-analyzer.explainError')<CR>") end
+    callback = function() vim.keymap.set('n', '<LEADER>e', vim.diagnostic.open_float) end
 })
 
 vim.cmd("iabbrev imgr img.r-stretch<TAB>,")
@@ -166,4 +166,23 @@ vim.cmd("iabbrev imgr img.r-stretch<TAB>,")
 -- Show Indentation visual guides by default (vim-indent-guides plugin)
 vim.g.indent_guides_enable_on_vim_startup = 1
 vim.g.indent_guides_default_mapping = 0
+
+vim.opt.laststatus = 2
+vim.o.winborder = 'rounded'
+
+--[[
+   [vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
+   [  pattern = {"*.md", "*.mdx", "*.rst", "*/COMMIT_EDITMSG"},
+   [  callback = function()
+   [    vim.opt.spell = true
+   [  end
+   [})
+   ]]
+
+-- show trailing whitespace
+vim.opt.list = true
+vim.opt.listchars = { tab = '╞ ',
+                      trail = '●',
+                      extends = '…',
+                      precedes = '…' }
 
