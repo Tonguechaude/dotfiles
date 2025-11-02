@@ -7,6 +7,7 @@ vim.pack.add({
 
   -- Git Integration
   {src = "https://github.com/tpope/vim-fugitive"},
+  {src = "https://github.com/lewis6991/gitsigns.nvim.git"},
 
   -- Fugitive Github plugin
   {src = "https://github.com/tpope/vim-rhubarb"},
