@@ -2,6 +2,7 @@ if vim.fn.executable('rust-analyzer') == 1 then
   vim.lsp.config('rust_analyzer', {
     cmd = { 'rust-analyzer' },
     filetypes = { 'rust' },
+    root_markers = { 'Cargo.toml', 'rust-project.json', '.git' },
     settings = {
       ['rust-analyzer'] = {
         cargo = {
@@ -9,7 +10,7 @@ if vim.fn.executable('rust-analyzer') == 1 then
           loadOutDirsFromCheck = true,
           runBuildScripts = true,
         },
-        checkOnSave = {
+        check = {
           allFeatures = true,
           command = 'clippy',
           extraArgs = { '--no-deps' },
@@ -21,6 +22,9 @@ if vim.fn.executable('rust-analyzer') == 1 then
             ['napi-derive'] = { 'napi' },
             ['async-recursion'] = { 'async_recursion' },
           },
+        },
+        files = {
+          excludeDirs = { ".git", "target", "node_modules" },
         },
       }
     }
