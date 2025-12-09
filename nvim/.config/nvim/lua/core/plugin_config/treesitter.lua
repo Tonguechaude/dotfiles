@@ -14,6 +14,7 @@ require'nvim-treesitter.configs'.setup {
     "toml",
     "vim",
     "vimdoc",
+    "puppet",
   },
 
   modules = { },
