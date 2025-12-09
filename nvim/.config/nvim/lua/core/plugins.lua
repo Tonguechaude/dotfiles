@@ -22,6 +22,7 @@ local plugins = {
   'tomasiser/vim-code-dark',
   'folke/tokyonight.nvim',
   'rebelot/kanagawa.nvim',
+  'Mofiqul/vscode.nvim',
   'preservim/nerdcommenter',
   'whiteinge/diffconflicts',
   'nvim-lua/plenary.nvim',

@@ -13,6 +13,9 @@ require("core.plugin_config.telescope")
 require("core.plugin_config.treesitter")
 
 -- themes
--- require("core.plugin_config.gruvbox")
+--require("core.plugin_config.gruvbox")
 --require("core.plugin_config.rose-pine")
 require("core.plugin_config.codedark")
+--require("core.plugin_config.vscode")
+--require("core.plugin_config.kanagawa")
+--require("core.plugin_config.tokyonight")

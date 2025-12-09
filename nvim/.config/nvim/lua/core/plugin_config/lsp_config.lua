@@ -11,7 +11,8 @@ require("mason-lspconfig").setup({
     "marksman",
     "ruff",
     "rust_analyzer",
-    "yamlls"
+    "yamlls",
+    "puppet-editor-services",
   }
 })
 
@@ -55,5 +56,32 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<space>f', function()
       vim.lsp.buf.format { async = true }
     end, opts)
+  end,
+})
+
+-- Configuration Puppet LSP
+vim.lsp.config.puppet = {
+  cmd = {
+    'puppet-languageserver',
+    '--stdio',
+    '--puppet-settings=--moduledir,./spec/fixtures/modules'
+  },
+  filetypes = { 'puppet' },
+  root_markers = { '.git', 'manifests', 'metadata.json' },
+  settings = {
+    puppet = {
+      validate = true,
+      lint = {
+        no_80chars_check = false,
+        no_documentation_check = false,
+      },
+    },
+  },
+}
+
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'puppet',
+  callback = function(args)
+    vim.lsp.enable('puppet')
   end,
 })
