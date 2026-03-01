@@ -31,11 +31,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 vim.keymap.set("n", "<space><space>", "<cmd> :noh<CR>", { desc = "Clear search highlighting" })
 
-vim.keymap.set("n", "<leader>t", function()
-   vim.cmd("cd %:p:h")
-   vim.cmd("belowright split | terminal")
-   vim.cmd("startinsert")
-end, { desc = "Open terminal in folder of current file"})
+-- Terminal via toggleterm (<A-i>) -- supprimé car remplacé par toggleterm
 
 -- Find and replace visual selection using CTRL-r
 vim.keymap.set("v", "<C-r>", "\"hy:%s/<C-r>h//gc<left><left><left>")

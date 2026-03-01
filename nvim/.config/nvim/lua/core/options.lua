@@ -38,6 +38,12 @@ vim.api.nvim_create_autocmd({"BufEnter", "BufWinEnter"}, {
   end
 })
 
+-- Folding (for nvim-ufo)
+vim.opt.foldlevel = 99
+vim.opt.foldlevelstart = 99
+vim.opt.foldenable = true
+vim.opt.updatetime = 50
+
 -- show trailing whitespace
 vim.opt.list = true
 vim.opt.listchars = { tab = '╞ ',
