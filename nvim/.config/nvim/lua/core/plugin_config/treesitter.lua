@@ -1,46 +1,107 @@
-require'nvim-treesitter.configs'.setup {
-  -- A list of parser names, or "all" (the five listed parsers should always be installed)
+require("nvim-treesitter.configs").setup({
   ensure_installed = {
     "bash",
     "c",
     "css",
     "devicetree",
+    "html",
+    "java",
+    "javascript",
+    "json",
     "kconfig",
     "lua",
+    "markdown",
     "markdown_inline",
+    "nix",
+    "python",
     "query",
     "regex",
     "rust",
     "toml",
+    "tsx",
+    "typescript",
     "vim",
     "vimdoc",
+    "yaml",
+    "zig",
     "puppet",
   },
 
-  modules = { },
-
-  -- Install parsers synchronously (only applied to `ensure_installed`)
+  modules = {},
   sync_install = false,
-
-  -- Automatically install missing parsers when entering buffer
-  -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
   auto_install = true,
-
-  -- List of parsers to ignore installing (or "all")
-  ignore_install = { },
-
-  ---- If you need to change the installation directory of the parsers (see -> Advanced Setup)
-  -- parser_install_dir = "/some/path/to/store/parsers", -- Remember to run vim.opt.runtimepath:append("/some/path/to/store/parsers")!
-
-  vim.filetype.add({
-    extension = {
-      overlay = 'devicetree',
-    },
-  }),
+  ignore_install = {},
 
   highlight = {
     enable = true,
     additional_vim_regex_highlighting = false,
     disable = { "diff" },
   },
-}
+
+  indent = { enable = true },
+
+  incremental_selection = { enable = true },
+
+  textobjects = {
+    select = {
+      enable = true,
+      lookahead = true,
+      keymaps = {
+        ["aa"] = "@parameter.outer",
+        ["ia"] = "@parameter.inner",
+        ["af"] = "@function.outer",
+        ["if"] = "@function.inner",
+        ["ac"] = "@class.outer",
+        ["ic"] = "@class.inner",
+        ["ii"] = "@conditional.inner",
+        ["ai"] = "@conditional.outer",
+        ["il"] = "@loop.inner",
+        ["al"] = "@loop.outer",
+        ["at"] = "@comment.outer",
+      },
+    },
+    move = {
+      enable = true,
+      goto_next_start = {
+        ["]m"] = "@function.outer",
+        ["]]"] = "@class.outer",
+      },
+      goto_next_end = {
+        ["]M"] = "@function.outer",
+        ["]["] = "@class.outer",
+      },
+      goto_previous_start = {
+        ["[m"] = "@function.outer",
+        ["[["] = "@class.outer",
+      },
+      goto_previous_end = {
+        ["[M"] = "@function.outer",
+        ["[]"] = "@class.outer",
+      },
+    },
+    swap = {
+      enable = true,
+      swap_next = {
+        ["<leader>a"] = "@parameter.inner",
+      },
+      swap_previous = {
+        ["<leader>A"] = "@parameter.outer",
+      },
+    },
+  },
+})
+
+-- Extension de type de fichier
+vim.filetype.add({
+  extension = {
+    overlay = "devicetree",
+  },
+})
+
+-- ts-autotag
+require("nvim-ts-autotag").setup()
+
+-- ts-context-commentstring
+require("ts_context_commentstring").setup({
+  enable_autocmd = false,
+})

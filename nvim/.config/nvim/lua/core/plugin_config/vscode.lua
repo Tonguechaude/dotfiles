@@ -1,2 +1,2 @@
-vim.o.termguicolors = true
-vim.cmd [[ colorscheme vscode ]]
+-- vim.o.termguicolors = true
+-- vim.cmd [[ colorscheme vscode ]]
