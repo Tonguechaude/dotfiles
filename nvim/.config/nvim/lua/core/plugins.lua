@@ -127,7 +127,6 @@ local plugins = {
     version = '^5',
     lazy = false,
   },
-  'eraserhd/parinfer-rust',
 
   -- ─── Completion ─────────────────────────────────────────────────────
   {
