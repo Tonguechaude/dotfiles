@@ -1,10 +1,12 @@
 [core]
 	editor = nvim
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [safe]
 	directory = /opt/Exegol
 [user]
 	email = evan.challias@tonguechaude.fr
   name  = Tonguechaude
+	signingkey = 11EB541FF234901B
 [alias]
   co = checkout
   lg = log --graph --date=relative --pretty=tformat:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%an %ad)%Creset'
@@ -12,3 +14,7 @@
   rebase = true
 [init]
 	defaultBranch = main
+;[commit]
+	;gpgsign = true
+;[tag]
+	;gpgsign = true
