@@ -131,3 +131,14 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # pokemon-colorscripts --no-title -s -r
+
+export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/docker.sock
+
+# bun completions
+[ -s "/home/echallias/.bun/_bun" ] && source "/home/echallias/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+source <(COMPLETE=zsh /home/echallias/.cargo/bin/adk completions zsh)
