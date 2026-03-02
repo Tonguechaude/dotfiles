@@ -12,7 +12,6 @@ require("mason-lspconfig").setup({
     "ruff",
     "rust_analyzer",
     "yamlls",
-    "puppet-editor-services",
   }
 })
 
